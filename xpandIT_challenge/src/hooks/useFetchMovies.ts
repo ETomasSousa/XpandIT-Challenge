@@ -1,0 +1,1 @@
+// Trata de ir buscar informação à api

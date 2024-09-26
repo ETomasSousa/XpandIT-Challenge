@@ -1,0 +1,1 @@
+// Trata de dar load a novos filmes à medida do scroll
