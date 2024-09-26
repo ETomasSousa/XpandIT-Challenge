@@ -14,7 +14,7 @@ header {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  margin: 0 20%;
+  margin: 0 15%;
 }
 
 .container p {

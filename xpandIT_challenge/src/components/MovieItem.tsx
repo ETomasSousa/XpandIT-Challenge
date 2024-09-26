@@ -1,16 +1,19 @@
 // Um elemento Filme apresentado na lista
 import React from 'react'
+import { MovieItemProps } from '../types/Movie'
 import view from './../assets/view.svg'
 import './../styles/MovieItem.css'
 
-export default function MovieItem() {
+const MovieItem: React.FC<MovieItemProps> = ({movie}) => {
   return (
     <tr>
-        <td>1</td>
-        <td>The Flash</td>
-        <td>2012</td>
-        <td>$500,000,000</td>
+        <td>{movie.rank}</td>
+        <td>{movie.title}</td>
+        <td>{movie.year}</td>
+        <td>{movie.revenue}</td>
         <td><img className='view-logo' src={view} alt="View"/></td>
     </tr>
   )
 }
+
+export default MovieItem
