@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getMovies } from './api/moviesApi';
+import { getMovies, getTop10Movies } from './api/moviesApi';
 import {Movie} from './types/Movie'
 import FilterButtons from './components/FilterButtons';
 import MovieList from './components/MovieList';
@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const fetchedMovies = await getMovies();
+        const fetchedMovies = await getTop10Movies(2014);
         console.log(fetchedMovies)
         setMovies(fetchedMovies);
       } catch (err) {
