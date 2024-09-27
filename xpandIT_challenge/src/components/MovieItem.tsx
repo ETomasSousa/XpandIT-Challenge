@@ -10,8 +10,8 @@ const MovieItem: React.FC<MovieProps> = ({movie}) => {
         <td>{movie.rank}</td>
         <td>{movie.title}</td>
         <td>{movie.year}</td>
-        <td>{movie.revenue}</td>
-        <td><img className='view-logo' src={view} alt="View"/></td>
+        <td>{movie.revenue ? `$ ${movie.revenue}` : '-'}</td>
+        <td><img className='view-logo' style={{cursor:"pointer"}} src={view} alt="View" /></td>
     </tr>
   )
 }
