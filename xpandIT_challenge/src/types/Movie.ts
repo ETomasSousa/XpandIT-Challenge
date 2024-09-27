@@ -14,12 +14,12 @@ export interface MovieDetails extends Movie {
     revenue: number,
 }
 
-export interface MovieListProps {
+export interface MovieArrayProps {
     movies: Movie[];
 }
 
-export interface MovieItemProps {
+export interface MovieProps {
     movie: Movie;
-  }
+}
 
 

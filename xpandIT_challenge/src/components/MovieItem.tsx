@@ -1,10 +1,10 @@
 // Um elemento Filme apresentado na lista
 import React from 'react'
-import { MovieItemProps } from '../types/Movie'
+import { MovieProps } from '../types/Movie'
 import view from './../assets/view.svg'
 import './../styles/MovieItem.css'
 
-const MovieItem: React.FC<MovieItemProps> = ({movie}) => {
+const MovieItem: React.FC<MovieProps> = ({movie}) => {
   return (
     <tr>
         <td>{movie.rank}</td>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getMovies } from './api/moviesApi';
 import {Movie} from './types/Movie'
-import FilterActions from './components/FilterActions';
+import FilterButtons from './components/FilterButtons';
 import MovieList from './components/MovieList';
 import './styles/App.css';
 
@@ -36,7 +36,7 @@ function App() {
       </header>
       <div className="container">
         <p>Movie ranking</p>
-        <FilterActions />
+        <FilterButtons />
         {isLoading ? <div>Loading...</div> : <MovieList movies={movies}/>}
       </div>
     </>

@@ -1,10 +1,12 @@
 .movies-list {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
+  overflow: auto;
+  height: 80vh;
+}
 
-.movies-list th {
+.movies-list thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     border-bottom: 1px solid #0B749B;
     padding: 4px 0;
     text-align: left;
@@ -13,23 +15,30 @@
     font-weight: bold;
 }
 
-th:nth-child(1) {
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+.movies-list thead th:nth-child(1) {
   width: 9%;
   text-align: center;
 }
 
-th:nth-child(2) {
+.movies-list thead th:nth-child(2) {
   width: 45%;
 }
 
-th:nth-child(3) {
+.movies-list thead th:nth-child(3) {
   width: 16%;
 }
 
-th:nth-child(4) {
+.movies-list thead th:nth-child(4) {
   width: 22%;
 }
 
-th:nth-child(5) {
+.movies-list thead th:nth-child(5) {
   width: 10%;
 }
