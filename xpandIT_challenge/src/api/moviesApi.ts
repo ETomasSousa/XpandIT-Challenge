@@ -19,13 +19,15 @@ export const getMovieDetail = async (id: string) => {
 };
   
   export const getTop10Movies = async (year: number): Promise<Movie[]> => {
-    const movies = await getMovies();    
-    const moviesInTheYear = movies.filter((movie: Movie) => movie.year === year);
-    const sortedMovies = moviesInTheYear.sort((a: any, b: any) => {
+    const movies = await getMovies();
+    const sortedMovies = movies.sort((a: any, b: any) => {
             if (a.revenue === null) return 1;
             if (b.revenue === null) return -1;
             return b.revenue - a.revenue;
     });
-    console.log(sortedMovies)
+    if(year){
+        const filteredMovies = sortedMovies.filter((movie) => movie.year === year);
+        return filteredMovies.slice(0,10);
+    }
     return sortedMovies.slice(0, 10);
   };

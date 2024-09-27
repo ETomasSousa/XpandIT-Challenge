@@ -7,15 +7,16 @@ import './styles/App.css';
 
 function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [isFilterSelected, setIsFilterSelected] = useState(false);
+  const [year, setYear] = useState(0);
+  const [filterSelected, setFilterSelected] = useState(0);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        if(isFilterSelected) {
-          const fetchedMovies = await getTop10Movies(2016);
+        if(filterSelected) {
+          const fetchedMovies = await getTop10Movies(year);
           setMovies(fetchedMovies);
         }
         else {
@@ -30,14 +31,17 @@ function App() {
     };
 
     fetchMovies();
-  }, [isFilterSelected]);
+  }, [filterSelected]);
 
-  const handleFilterSelection = () => {
-    setIsFilterSelected(true);
+  const handleFilterSelection = (filter: number) => {
+    if (filter === 1) setYear(0);
+    else setYear(filter);
+    setFilterSelected(filter);
   }
 
   const handleFilterReset = () => {
-    setIsFilterSelected(false);
+    setYear(0);
+    setFilterSelected(0);
   }
 
   if (error) {
@@ -51,11 +55,21 @@ function App() {
       <div className="container">
         <p>Movie ranking</p>
         <div className='filters-container'>
-          <button className='filter' onClick={handleFilterSelection}>Top 10 Revenue</button>
-          <select className='filter'>
-            <option value="">Top Revenue per Year</option>
+          <button className={`filter${filterSelected === 1 ? '-active' : ''}`} onClick={() => handleFilterSelection(1)}>Top 10 Revenue</button>
+          <select 
+            id="yearSelect"
+            className={`filter${filterSelected === 2 ? '-active' : ''}`} 
+            value={year} 
+            onChange={(e) => handleFilterSelection(parseInt(e.target.value))}
+          >
+            <option value="">Top 10 Revenue per Year</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+            <option value="2012">2012</option>
           </select>
-          {isFilterSelected && <img className='reset-logo' style={{cursor:"pointer"}} src={reset} alt="Reset" onClick={handleFilterReset}/>}
+          {filterSelected ? <img className='reset-logo' style={{cursor:"pointer"}} src={reset} alt="Reset" onClick={handleFilterReset}/> : <></>}
         </div>
         {isLoading ? <div>Loading...</div> : <MovieList movies={movies}/>}
       </div>
