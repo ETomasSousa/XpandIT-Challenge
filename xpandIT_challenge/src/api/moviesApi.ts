@@ -9,13 +9,9 @@ export const getMovies = async (): Promise<Movie[]> => {
 };
   
 export const getMovieDetail = async (id: string) => {
-    await axios.get(`http://movie-challenge-api-xpand.azurewebsites.net/api/movies/${id}`)
-    .then((response) => {
-        return response.data;
-        })
-    .catch((error) => {
-        console.error('Error fetching data:', error);
-    });
+    const response = await axios.get(`http://movie-challenge-api-xpand.azurewebsites.net/api/movies/${id}`)
+    const fetchedDetails = await response.data;
+    return fetchedDetails;
 };
   
   export const getTop10Movies = async (year: number): Promise<Movie[]> => {
@@ -25,7 +21,7 @@ export const getMovieDetail = async (id: string) => {
             if (b.revenue === null) return -1;
             return b.revenue - a.revenue;
     });
-    if(year){
+    if(year > 1){
         const filteredMovies = sortedMovies.filter((movie) => movie.year === year);
         return filteredMovies.slice(0,10);
     }

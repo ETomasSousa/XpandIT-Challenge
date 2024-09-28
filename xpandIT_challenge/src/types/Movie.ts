@@ -6,20 +6,42 @@ export interface Movie {
     revenue: number,
 }
 
-export interface MovieDetails extends Movie {
-    id:	string,
-    title:	string,
+export interface MovieDetail extends Movie {
+    id: string,
+    title: string,
     year: number,
-    rank:	number,
+    rank: number,
     revenue: number,
+    genre: string,
+    description: string,
+    director: string,
+    actors: string,
+    runtime: number,
+    rating:	number,
+    votes:	number,
+    metascore: number,
 }
 
-export interface MovieArrayProps {
+export interface FilterButtonsProps {
+    year: number;
+    onFilterChange: (filter: number) => void;
+    onReset: () => void;
+}
+
+export interface MovieListProps {
     movies: Movie[];
+    onMovieSelect: (movieId: string) => void;
 }
 
-export interface MovieProps {
+export interface MovieItemProps {
     movie: Movie;
+    rank: number;
+    onMovieSelect: (movieId: string) => void;
+}
+
+export interface MovieDetailsProps {
+    movieId: string;
+    onClose: () => void;
 }
 
 
