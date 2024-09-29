@@ -9,7 +9,7 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie, rank, onMovieSelect }) => 
       <td>{rank}</td>
       <td>{movie.title}</td>
       <td>{movie.year}</td>
-      <td>{movie.revenue ? `$ ${movie.revenue}` : '-'}</td>
+      <td>{movie.revenue ? `$${movie.revenue}` : '-'}</td>
       <td>
         <img
           className='view-logo'

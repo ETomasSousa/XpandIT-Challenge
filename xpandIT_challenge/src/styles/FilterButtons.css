@@ -2,44 +2,84 @@
     display: flex;
     align-items: center;
     margin-bottom: 42px;
+    width:fit-content;
+    position: relative;
 }
 
-.filter {
+.filter, .filter-active {
+    position: relative;
     margin-right: 16px;
     padding: 8px 12px;
     background-color: white;
     border: 1px solid #78849E66;
     border-radius: 20px;
-    font: #78849E66;
+    color: #78849E;
     font-size: 12px;
-    font-weight: lighter;
+    font-weight: 300;
     cursor: pointer;
-    transition: opacity 0.5 ease;
+    transition: opacity 0.3s ease-in;
+}
+
+.filter-active{
+    background-color: #00BAFF;
+    color: #012433;
+    font-weight: 400;
 }
 
 .filter:hover {
     opacity: 0.7;
 }
 
-.filter-active{
-    margin-right: 16px;
-    padding: 8px 12px;
-    background-color: #00BAFF;
-    border: 1px solid #78849E66;
-    border-radius: 20px;
-    font: #012433;
+.filter-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.filter-dropdown-menu {
+    position: absolute;
+    display: block;
+    padding: 5px 0 10px 0;
+    top: 0;
+    left: calc(100% - 10px);
+    width: 178px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0px 12px 24px #01243366;
+    z-index: 1000;
+}
+
+.filter-dropdown-menu p {
+    color: #78849EB9;
     font-size: 12px;
-    font-weight: 400;
+    margin: 12px 0;
+
+}
+
+.filter-dropdown-option {
+    padding: 2px 0;
+    color: #536B7A;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-dropdown-option:hover {
+    background-color: #f1f1f1;
 }
 
 .reset-logo {
     height: 24px;
     width: 24px;
-    transition: opacity 0.5 ease;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
 }
 
 .reset-logo:hover {
     opacity: 0.7;   
 }
-  

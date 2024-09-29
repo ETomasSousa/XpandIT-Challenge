@@ -1,28 +1,67 @@
-import React from 'react';
+import React, { useState,useEffect, useRef } from 'react';
+import { FilterButtonsProps } from './../types/Movie';
 import reset from './../assets/reset.svg';
-import {FilterButtonsProps} from './../types/Movie'
 import './../styles/FilterButtons.css';
 
-
 const FilterButtons: React.FC<FilterButtonsProps> = ({ year, onFilterChange, onReset }) => {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const years = Array.from({ length: 17 }, (_, i) => 2016 - i);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleDropdownToggle = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleYearSelect = (selectedYear: number) => {
+    onFilterChange(selectedYear);
+    setDropdownOpen(false);
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      setDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDropdownOpen]);
+
   return (
     <div className='filters-container'>
-      <button className={`filter${year === 1 ? '-active' : ''}`} onClick={() => onFilterChange(1)}>
+      <div className={`filter${year === 1 ? '-active' : ''}`} onClick={() => onFilterChange(1)}>
         Top 10 Revenue
-      </button>
-      <select
-        id="yearSelect"
-        className={`filter${year >= 2 ? '-active' : ''}`}
-        value={year}
-        onChange={(e) => onFilterChange(parseInt(e.target.value))}
-      >
-        <option value="">Top 10 Revenue per Year</option>
-        <option value="2016">2016</option>
-        <option value="2015">2015</option>
-        <option value="2014">2014</option>
-        <option value="2013">2013</option>
-        <option value="2012">2012</option>
-      </select>
+      </div>
+      <div style={{ position: 'relative' }} ref={dropdownRef}>
+        <div className={`filter${year > 1 ? '-active' : ''}`} onClick={handleDropdownToggle}>
+          {year > 1 ? `Top 10 Revenue ${year}` : 'Top 10 Revenue per Year'}
+        </div>
+        {isDropdownOpen && (
+          <>
+            <div className='filter-backdrop' onClick={() => setDropdownOpen(false)} />
+            <div className='filter-dropdown-menu'>
+              <p>Select a year</p>
+              {years.map((yearOption) => (
+                <div
+                  key={yearOption}
+                  className='filter-dropdown-option'
+                  onClick={() => handleYearSelect(yearOption)}
+                >
+                  {yearOption}
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
       {year ? (
         <img className='reset-logo' style={{ cursor: "pointer" }} src={reset} alt="Reset" onClick={onReset} />
       ) : null}

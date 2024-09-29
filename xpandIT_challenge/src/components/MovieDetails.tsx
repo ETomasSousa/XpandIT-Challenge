@@ -62,7 +62,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId, onClose }) => {
               <label>Votes</label>
               <p className="popup-detail">{movieDetail.votes}</p>
               <label>Revenue</label>
-              <p className="popup-detail">$ {movieDetail.revenue || 'N/A'}</p>
+              <p className="popup-detail">${movieDetail.revenue || 'N/A'}</p>
               <label>Metascore</label>
               <p className="popup-detail">{movieDetail.metascore}</p>
             </div>
