@@ -30,6 +30,18 @@ function App() {
     fetchMovies();
   }, [year]);
 
+  useEffect(() => {
+    if (selectedMovie) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [selectedMovie]);
+
   const handleFilterSelection = (filter: number) => {
     setYear(filter);
   };
