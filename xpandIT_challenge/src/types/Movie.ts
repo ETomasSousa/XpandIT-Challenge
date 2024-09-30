@@ -44,4 +44,9 @@ export interface MovieDetailsProps {
 	onClose: () => void;
 }
 
+export interface ErrorProps {
+  message: string;
+}
+
+
 

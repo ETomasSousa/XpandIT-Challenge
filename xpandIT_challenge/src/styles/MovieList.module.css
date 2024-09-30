@@ -1,8 +1,8 @@
-.movies-list {
+.moviesList {
 	height: 55vh;
 }
 
-.movies-list thead th {
+.moviesList thead th {
 	border-bottom: 1px solid #0B749B;
 	padding: 4px 0;
 	text-align: left;
@@ -11,7 +11,7 @@
 	font-weight: bold;
 }
 
-.movies-list tbody {
+.moviesList tbody {
 	overflow: auto;
 }
 
@@ -21,23 +21,23 @@ table {
 }
 
 
-.movies-list thead th:nth-child(1) {
+.moviesList thead th:nth-child(1) {
 	width: 9%;
 	text-align: center;
 }
 
-.movies-list thead th:nth-child(2) {
+.moviesList thead th:nth-child(2) {
 	width: 47%;
 }
 
-.movies-list thead th:nth-child(3) {
+.moviesList thead th:nth-child(3) {
 	width: 16%;
 }
 
-.movies-list thead th:nth-child(4) {
+.moviesList thead th:nth-child(4) {
 	width: 20%;
 }
 
-.movies-list thead th:nth-child(5) {
+.moviesList thead th:nth-child(5) {
 	width: 10%;
 }

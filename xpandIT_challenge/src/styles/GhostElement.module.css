@@ -1,4 +1,4 @@
-.ghost-title {
+.ghostTitle {
 	margin: 24px 0 32px 0;
 	width: 250px;
 	height: 50px;
@@ -7,7 +7,7 @@
 	animation: pulse 1.5s infinite;
 }
 
-.ghost-filter {
+.ghostFilter {
 	width: 150px;
 	height: 40px;
 	margin-right: 16px;
@@ -17,13 +17,13 @@
 	animation: pulse 1.5s infinite;
 }
 
-.movie-ghost-list {
+.movieGhostList {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
 }
 
-.movie-ghost-list-header {
+.movieGhostListHeader {
 	width: 100%;
 	height: 50px;
 	background-color: #e0e0e0;
@@ -31,7 +31,7 @@
 	animation: pulse 1.5s infinite;
 }
 
-.movie-ghost-items {
+.movieGhostItems {
 	width: 100%;
 	height: 600px;
 	background-color: #e0e0e0;

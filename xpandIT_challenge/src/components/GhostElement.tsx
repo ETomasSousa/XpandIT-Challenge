@@ -1,16 +1,16 @@
-import './../styles/GhostElement.module.css'
+import styles from './../styles/GhostElement.module.css'
 
 export default function GhostElement() {
 	return (
 		<>
-			<div className="ghost-title"></div>
+			<div className={styles.ghostTitle}></div>
 			<div style={{ display: "flex", marginBottom: "42px" }}>
-				<div className="ghost-filter"></div>
-				<div className="ghost-filter"></div>
+				<div className={styles.ghostFilter}></div>
+				<div className={styles.ghostFilter}></div>
 			</div>
-			<div className="movie-ghost-list">
-				<div className="movie-ghost-list-header"></div>
-				<div className="movie-ghost-items"></div>
+			<div className={styles.movieGhostList}>
+				<div className={styles.movieGhostListHeader}></div>
+				<div className={styles.movieGhostItems}></div>
 			</div>
 		</>
 	)

@@ -2,7 +2,7 @@
 import { MovieDetailsProps } from '../types/Movie';
 import close from '../assets/close.svg'
 import popupLine from '../assets/popup-line.svg';
-import './../styles/MovieDetails.module.css';
+import styles from './../styles/MovieDetails.module.css';
 
 const MovieDetails = ({ movieDetails, onClose }: MovieDetailsProps) => {
 
@@ -10,49 +10,49 @@ const MovieDetails = ({ movieDetails, onClose }: MovieDetailsProps) => {
 
 	return (
 		<>
-			<div className='popup-backdrop'></div>
-			<div className='popup-overlay'>
-				<div className='popup-content'>
-					<div className='popup-header'>
+			<div className={styles.popupBackdrop}></div>
+			<div className={styles.popupOverlay}>
+				<div className={styles.popupContent}>
+					<div className={styles.popupHeader}>
 						<h2>{movieDetails.title}</h2>
 						<div>
 							<img
-								className='close-logo'
+								className={styles.closeLogo}
 								src={close}
 								alt="Close"
 								onClick={onClose}
 							/>
-							<p className='close-text'>CLOSE</p>
+							<p className={styles.closeText}>CLOSE</p>
 						</div>
 					</div>
-					<img className='line-logo' src={popupLine} alt="Popup Line" />
+					<img className={styles.lineLogo} src={popupLine} alt="Popup Line" />
 					<div>
 						<label>Year</label>
-						<p className="popup-detail">{movieDetails.year}</p>
+						<p className={styles.popupDetail}>{movieDetails.year}</p>
 						<label>Genre</label>
-						<p className="popup-detail">{movieDetails.genre || 'N/A'}</p>
+						<p className={styles.popupDetail}>{movieDetails.genre || 'N/A'}</p>
 						<label>Description</label>
-						<p className="popup-detail">{movieDetails.description}</p>
-						<div className='popup-cast'>
+						<p className={styles.popupDetail}>{movieDetails.description}</p>
+						<div className={styles.popupCast}>
 							<div>
 								<label>Director</label>
-								<p className="popup-detail">{movieDetails.director}</p>
+								<p className={styles.popupDetail}>{movieDetails.director}</p>
 							</div>
 							<div>
 								<label>Actors</label>
-								<p className="popup-detail">{movieDetails.actors.split(',')}</p>
+								<p className={styles.popupDetail}>{movieDetails.actors.split(',')}</p>
 							</div>
 						</div>
 						<label>Runtime</label>
-						<p className="popup-detail">{movieDetails.runtime} mins</p>
+						<p className={styles.popupDetail}>{movieDetails.runtime} mins</p>
 						<label>Rating</label>
-						<p className="popup-detail">{movieDetails.rating || 'N/A'}</p>
+						<p className={styles.popupDetail}>{movieDetails.rating || 'N/A'}</p>
 						<label>Votes</label>
-						<p className="popup-detail">{movieDetails.votes}</p>
+						<p className={styles.popupDetail}>{movieDetails.votes}</p>
 						<label>Revenue</label>
-						<p className="popup-detail">${movieDetails.revenue || 'N/A'}</p>
+						<p className={styles.popupDetail}>${movieDetails.revenue || 'N/A'}</p>
 						<label>Metascore</label>
-						<p className="popup-detail">{movieDetails.metascore}</p>
+						<p className={styles.popupDetail}>{movieDetails.metascore}</p>
 					</div>
 				</div>
 			</div>

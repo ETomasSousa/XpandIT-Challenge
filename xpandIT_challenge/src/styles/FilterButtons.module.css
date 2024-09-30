@@ -1,4 +1,4 @@
-.filters-container {
+.filtersContainer {
 	display: flex;
 	align-items: center;
 	margin-bottom: 42px;
@@ -7,7 +7,7 @@
 }
 
 .filter,
-.filter-active {
+.filterActive {
 	position: relative;
 	margin-right: 16px;
 	padding: 8px 12px;
@@ -21,7 +21,7 @@
 	transition: opacity 0.3s ease-in;
 }
 
-.filter-active {
+.filterActive {
 	background-color: #00BAFF;
 	color: #012433;
 	font-weight: 400;
@@ -31,7 +31,7 @@
 	opacity: 0.7;
 }
 
-.filter-backdrop {
+.filterBackdrop {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -41,7 +41,7 @@
 	z-index: 999;
 }
 
-.filter-dropdown-menu {
+.filterDropdownMenu {
 	position: absolute;
 	display: block;
 	padding: 5px 0 10px 0;
@@ -54,14 +54,14 @@
 	z-index: 1000;
 }
 
-.filter-dropdown-menu p {
+.filterDropdownMenu p {
 	color: #78849EB9;
 	font-size: 12px;
 	margin: 12px 0;
 
 }
 
-.filter-dropdown-option {
+.filterDropdownOption {
 	padding: 2px 0;
 	color: #536B7A;
 	font-size: 14px;
@@ -70,17 +70,17 @@
 	transition: background-color 0.3s ease;
 }
 
-.filter-dropdown-option:hover {
+.filterDropdownOption:hover {
 	background-color: #f1f1f1;
 }
 
-.reset-logo {
+.resetLogo {
 	height: 24px;
 	width: 24px;
 	cursor: pointer;
 	transition: opacity 0.5s ease;
 }
 
-.reset-logo:hover {
+.resetLogo:hover {
 	opacity: 0.7;
 }

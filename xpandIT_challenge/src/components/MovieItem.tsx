@@ -1,6 +1,6 @@
 import { MovieItemProps } from '../types/Movie';
 import view from './../assets/view.svg';
-import './../styles/MovieItem.module.css';
+import styles from './../styles/MovieItem.module.css';
 
 const MovieItem = ({ movie, rank, onMovieSelect }: MovieItemProps) => {
 	return (

@@ -1,11 +1,11 @@
 import MovieItem from './MovieItem';
 import { MovieListProps } from '../types/Movie';
-import './../styles/MovieList.module.css';
+import styles from './../styles/MovieList.module.css';
 
 
 const MovieList = ({ movies, onMovieSelect }: MovieListProps) => {
 	return (
-		<div className='movies-list'>
+		<div className={styles.moviesList}>
 			<table>
 				<thead>
 					<tr>

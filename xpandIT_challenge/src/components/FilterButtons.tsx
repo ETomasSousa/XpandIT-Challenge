@@ -2,14 +2,15 @@ import { useState, useRef } from 'react';
 import { FilterButtonsProps } from './../types/Movie';
 import useOutsideClick from '../hooks/useOutsideClick';
 import reset from './../assets/reset.svg';
-import './../styles/FilterButtons.module.css';
+import styles from './../styles/FilterButtons.module.css';
 
-const years = Array.from({ length: 17 }, (_, i) => 2016 - i);
-const dropdownRef = useRef<HTMLDivElement>(null);
 
 const FilterButtons = ({ year, onFilterChange, onReset }: FilterButtonsProps) => {
 	const [isDropdownOpen, setDropdownOpen] = useState(false);
+	const years = Array.from({ length: 17 }, (_, i) => 2016 - i);
 
+	const dropdownRef = useRef<HTMLDivElement>(null);
+	
 	useOutsideClick(dropdownRef, () => setDropdownOpen(false));
 
 	const handleDropdownToggle = () => {
@@ -22,23 +23,23 @@ const FilterButtons = ({ year, onFilterChange, onReset }: FilterButtonsProps) =>
 	};
 
 	return (
-		<div className='filters-container'>
-			<div className={`filter${year === 1 ? '-active' : ''}`} onClick={() => onFilterChange(1)}>
+		<div className={styles.filtersContainer}>
+			<div className={year === 1 ? styles.filterActive : styles.filter} onClick={() => onFilterChange(1)}>
 				Top 10 Revenue
 			</div>
 			<div style={{ position: 'relative' }} ref={dropdownRef}>
-				<div className={`filter${year > 1 ? '-active' : ''}`} onClick={handleDropdownToggle}>
+				<div className={year > 1 ? styles.filterActive : styles.filter} onClick={handleDropdownToggle}>
 					{year > 1 ? `Top 10 Revenue ${year}` : 'Top 10 Revenue per Year'}
 				</div>
 				{isDropdownOpen && (
 					<>
-						<div className='filter-backdrop' onClick={() => setDropdownOpen(false)} />
-						<div className='filter-dropdown-menu'>
+						<div className={styles.filterBackdrop} onClick={() => setDropdownOpen(false)} />
+						<div className={styles.filterDropdownMenu}>
 							<p>Select a year</p>
 							{years.map((yearOption) => (
 								<div
 									key={yearOption}
-									className='filter-dropdown-option'
+									className={styles.filterDropdownOption}
 									onClick={() => handleYearSelect(yearOption)}
 								>
 									{yearOption}
@@ -49,7 +50,7 @@ const FilterButtons = ({ year, onFilterChange, onReset }: FilterButtonsProps) =>
 				)}
 			</div>
 			{year ? (
-				<img className='reset-logo' style={{ cursor: "pointer" }} src={reset} alt="Reset" onClick={onReset} />
+				<img className={styles.resetLogo} style={{ cursor: "pointer" }} src={reset} alt="Reset" onClick={onReset} />
 			) : null}
 		</div>
 	);

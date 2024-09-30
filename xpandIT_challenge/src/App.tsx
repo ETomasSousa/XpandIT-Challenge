@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import useFetchMovies from './hooks/useFetchMovies';
 import GhostElement from './components/GhostElement';
+import Error from './components/Error'
 import FilterButtons from './components/FilterButtons';
 import MovieList from './components/MovieList';
 import MovieDetails from './components/MovieDetails';
@@ -35,15 +36,15 @@ function App() {
 
 	return (
 		<>
-			<header className='header'></header>
+			<header className="header"></header>
 			<div className="container">
 				{isLoading ? (
 					<GhostElement />
 				) : error ? (
-					<div>{error}</div>
+					<Error message={error} />
 				) : (
 					<>
-						<p className='head-title'>Movie ranking</p>
+						<p className="head-title">Movie ranking</p>
 						<FilterButtons year={year} onFilterChange={handleYearChange} onReset={handleFilterReset} />
 						<MovieList movies={movies} onMovieSelect={handleMovieSelect} />
 						{selectedMovie && <MovieDetails movieDetails={movieDetails} onClose={closePopup} />}
