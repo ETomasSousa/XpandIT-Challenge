@@ -6,7 +6,7 @@ Frontend Xpand IT Challenge
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/ETomasSousa/XpandIT-Challenge.git
-   cd xpandIT_challenge
+   cd XpandIT-Challenge/xpandIT-challenge
    ```
 
 2. **Install Dependencies**
