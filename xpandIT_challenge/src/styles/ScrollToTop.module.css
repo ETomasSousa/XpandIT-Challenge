@@ -1,0 +1,25 @@
+.scrollToTopBtn {
+  display: inline-block;
+  position: fixed;
+  top: 20px;
+  right: 50%;
+  z-index: 998;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  background-color: #0124334c;
+  color: white;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 16px;
+  transition: background-color 0.3s;
+}
+
+.scrollToTopBtn:hover {
+  background-color: #012433;
+}
+
+.scrollToTopBtn:focus {
+  outline: none;
+}
+

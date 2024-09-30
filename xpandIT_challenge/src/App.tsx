@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useFetchMovies from './hooks/useFetchMovies';
 import useInfiniteScroll from './hooks/useInfiniteScroll';
 import GhostElement from './components/GhostElement';
 import FilterButtons from './components/FilterButtons';
 import MovieList from './components/MovieList';
 import MovieDetails from './components/MovieDetails';
+import ScrollToTop from './components/ScrollToTop';
 import './styles/App.css';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
 		};
 	}, [selectedMovie]);
 
+
 	const handleYearChange = (year: number) => {
 		setYear(year);
 	};
@@ -71,7 +73,7 @@ function App() {
 
 	return (
 		<>
-			<header className="header"></header>
+			<header className="header" id="top"></header>
 			<div className="container">
 				{isLoading ? (
 					<GhostElement />
@@ -86,6 +88,7 @@ function App() {
 					</>
 				)}
 			</div>
+			<ScrollToTop />
 		</>
 	);
 }
