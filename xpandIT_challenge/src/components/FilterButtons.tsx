@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { FilterButtonsProps } from './../types/Movie';
+import useOutsideClick from '../hooks/useOutsideClick';
 import reset from './../assets/reset.svg';
 import './../styles/FilterButtons.module.css';
 
@@ -9,6 +10,8 @@ const dropdownRef = useRef<HTMLDivElement>(null);
 const FilterButtons = ({ year, onFilterChange, onReset }: FilterButtonsProps) => {
 	const [isDropdownOpen, setDropdownOpen] = useState(false);
 
+	useOutsideClick(dropdownRef, () => setDropdownOpen(false));
+
 	const handleDropdownToggle = () => {
 		setDropdownOpen(!isDropdownOpen);
 	};
@@ -17,24 +20,6 @@ const FilterButtons = ({ year, onFilterChange, onReset }: FilterButtonsProps) =>
 		onFilterChange(selectedYear);
 		setDropdownOpen(false);
 	};
-
-	const handleClickOutside = (event: MouseEvent) => {
-		if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-			setDropdownOpen(false);
-		}
-	};
-
-	useEffect(() => {
-		if (isDropdownOpen) {
-			document.addEventListener('mousedown', handleClickOutside);
-		} else {
-			document.removeEventListener('mousedown', handleClickOutside);
-		}
-
-		return () => {
-			document.removeEventListener('mousedown', handleClickOutside);
-		};
-	}, [isDropdownOpen]);
 
 	return (
 		<div className='filters-container'>
