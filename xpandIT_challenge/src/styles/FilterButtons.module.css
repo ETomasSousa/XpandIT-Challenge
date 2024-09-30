@@ -1,86 +1,85 @@
 .filtersContainer {
-	display: flex;
-	align-items: center;
-	margin-bottom: 42px;
-	width: fit-content;
-	position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 42px;
+    width: fit-content;
+    position: relative;
 }
 
 .filter,
 .filterActive {
-	position: relative;
-	margin-right: 16px;
-	padding: 8px 12px;
-	background-color: white;
-	border: 1px solid #78849E66;
-	border-radius: 20px;
-	color: #78849E;
-	font-size: 12px;
-	font-weight: 300;
-	cursor: pointer;
-	transition: opacity 0.3s ease-in;
+    position: relative;
+    margin-right: 16px;
+    padding: 8px 12px;
+    background-color: white;
+    border: 1px solid #78849E66;
+    border-radius: 20px;
+    color: #78849E;
+    font-size: 12px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in;
 }
 
 .filterActive {
-	background-color: #00BAFF;
-	color: #012433;
-	font-weight: 400;
+    background-color: #00BAFF;
+    color: #012433;
+    font-weight: 400;
 }
 
 .filter:hover {
-	opacity: 0.7;
+    opacity: 0.7;
 }
 
 .filterBackdrop {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.2);
-	z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 999;
 }
 
 .filterDropdownMenu {
-	position: absolute;
-	display: block;
-	padding: 5px 0 10px 0;
-	top: 0;
-	left: calc(100% - 10px);
-	width: 178px;
-	background-color: white;
-	text-align: center;
-	box-shadow: 0px 12px 24px #01243366;
-	z-index: 1000;
+    position: absolute;
+    display: block;
+    padding: 5px 0 10px 0;
+    top: 0;
+    left: calc(100% - 10px);
+    width: 178px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0px 12px 24px #01243366;
+    z-index: 1000;
 }
 
 .filterDropdownMenu p {
-	color: #78849EB9;
-	font-size: 12px;
-	margin: 12px 0;
-
+    color: #78849EB9;
+    font-size: 12px;
+    margin: 12px 0;
 }
 
 .filterDropdownOption {
-	padding: 2px 0;
-	color: #536B7A;
-	font-size: 14px;
-	font-weight: 500;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+    padding: 2px 0;
+    color: #536B7A;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .filterDropdownOption:hover {
-	background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
 
 .resetLogo {
-	height: 24px;
-	width: 24px;
-	cursor: pointer;
-	transition: opacity 0.5s ease;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
 }
 
 .resetLogo:hover {
-	opacity: 0.7;
+    opacity: 0.7;
 }

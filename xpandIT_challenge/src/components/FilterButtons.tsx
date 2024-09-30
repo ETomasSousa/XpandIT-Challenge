@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FilterButtonsProps } from './../types/Movie';
 import useOutsideClick from '../hooks/useOutsideClick';
 import reset from './../assets/reset.svg';
@@ -12,6 +12,18 @@ const FilterButtons = ({ year, onFilterChange, onReset }: FilterButtonsProps) =>
 	const dropdownRef = useRef<HTMLDivElement>(null);
 	
 	useOutsideClick(dropdownRef, () => setDropdownOpen(false));
+
+	useEffect(() => {
+		if (isDropdownOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
+		}
+
+		return () => {
+			document.body.style.overflow = 'auto';
+		};
+	}, [isDropdownOpen]);
 
 	const handleDropdownToggle = () => {
 		setDropdownOpen(!isDropdownOpen);

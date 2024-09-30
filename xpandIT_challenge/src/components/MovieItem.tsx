@@ -3,12 +3,19 @@ import view from './../assets/view.svg';
 import styles from './../styles/MovieItem.module.css';
 
 const MovieItem = ({ movie, rank, onMovieSelect }: MovieItemProps) => {
+
+	const {
+		title,
+		year,
+		revenue,
+	} = movie;
+
 	return (
-		<tr>
+		<tr className={styles.movieItem}>
 			<td>{rank}</td>
-			<td>{movie.title}</td>
-			<td>{movie.year}</td>
-			<td>{movie.revenue ? `$${movie.revenue}` : '-'}</td>
+			<td>{title}</td>
+			<td>{year}</td>
+			<td>{revenue ? `$${revenue.toFixed(2)}` : '-'}</td>
 			<td>
 				<img
 					className='view-logo'

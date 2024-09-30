@@ -16,6 +16,7 @@
 	top: 65px;
 	bottom: 65px;
 	width: 55%;
+	min-width: 500px;
 	margin: 0 6%;
 	background-color: white;
 	box-shadow: 0px 20px 40px #01243366;
@@ -78,7 +79,7 @@
 	transition: transform 0.3s ease-out, color 0.3s ease-out;
 }
 
-.closeLogo:hover+.close-text {
+.closeLogo:hover +.closeText {
 	color: #012433;
 	transform: translate(-36px, -21px);
 }
@@ -107,4 +108,10 @@
 
 .popupCast p {
 	color: #00BAFF;
+}
+
+.popupActors {
+	display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
 }
