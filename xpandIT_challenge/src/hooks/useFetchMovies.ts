@@ -8,10 +8,8 @@ const useFetchMovies = (year: number, selectedMovieId: string | null, page: numb
 	const [error, setError] = useState<string | null>(null);
 
 	const removeDuplicates = (movies: Movie[]) => {
-		const uniqueMovies = movies.filter(
-			(movie, index, self) => index === self.findIndex((m) => m.id === movie.id)
-		);
-		return uniqueMovies;
+		const movieMap = new Map(movies.map(movie => [movie.id, movie]));
+		return Array.from(movieMap.values());
 	};
 
 	useEffect(() => {

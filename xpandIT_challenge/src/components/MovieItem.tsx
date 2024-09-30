@@ -1,8 +1,9 @@
+import React from 'react';
 import { MovieItemProps } from '../types/Movie';
 import view from './../assets/view.svg';
 import styles from './../styles/MovieItem.module.css';
 
-const MovieItem = ({ movie, rank, onMovieSelect }: MovieItemProps) => {
+const MovieItem = React.memo(({ movie, rank, onMovieSelect }: MovieItemProps) => {
 
 	const {
 		title,
@@ -27,6 +28,6 @@ const MovieItem = ({ movie, rank, onMovieSelect }: MovieItemProps) => {
 			</td>
 		</tr>
 	);
-};
+});
 
 export default MovieItem;

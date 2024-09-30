@@ -3,6 +3,7 @@ import error from './../assets/error.svg'
 import styles from './../styles/Error.module.css';
 
 const ErrorComponent = ({ message }: ErrorProps) => {
+	const messages: string[] = message.split(';')
 	return (
 		<div className={styles.errorContainer}>
 			<div className={styles.errorContent}>
@@ -12,8 +13,9 @@ const ErrorComponent = ({ message }: ErrorProps) => {
 					alt="ERROR"
 				/>
 				<div>
-					<p className={styles.errorMessage}>{message}</p>
-					<p className={styles.errorMessage}>Try refresh the page!</p>
+					{messages.map((message,index) => (
+						<p key={index} className={styles.errorMessage}>{message.trim()}</p>
+					))}
 				</div>
 			</div>
 		</div>

@@ -1,9 +1,14 @@
 import MovieItem from './MovieItem';
 import { MovieListProps } from '../types/Movie';
+import Error from './Error'
 import styles from './../styles/MovieList.module.css';
 
 
 const MovieList = ({ movies, onMovieSelect }: MovieListProps) => {
+	if (movies.length === 0) return (
+		<Error message="Movies not found for this year;Try select another year!"/>
+	); 
+
 	return (
 		<div className={styles.moviesList}>
 			<table>

@@ -14,7 +14,7 @@ const useInfiniteScroll = (callback: () => void) => {
 					setIsFetching(true);
 					callback();
 				}
-		}, 100);
+		}, 200);
 
 		window.addEventListener('scroll', handleScroll);
 

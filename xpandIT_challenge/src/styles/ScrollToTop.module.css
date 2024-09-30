@@ -2,7 +2,8 @@
   display: inline-block;
   position: fixed;
   top: 20px;
-  right: 50%;
+  left: 50%;
+  left: 50%;
   z-index: 998;
   font-size: 12px;
   border: none;
@@ -12,14 +13,10 @@
   cursor: pointer;
   padding: 8px 12px;
   border-radius: 16px;
+  transform: translate(-50%, 0);
   transition: background-color 0.3s;
 }
 
 .scrollToTopBtn:hover {
   background-color: #012433;
 }
-
-.scrollToTopBtn:focus {
-  outline: none;
-}
-

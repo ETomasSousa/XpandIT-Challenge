@@ -8,25 +8,16 @@ import styles from './../styles/FilterButtons.module.css';
 const FilterButtons = ({ year, onFilterChange, onReset }: FilterButtonsProps) => {
 	const [isDropdownOpen, setDropdownOpen] = useState(false);
 	const years = Array.from({ length: 17 }, (_, i) => 2016 - i);
-
 	const dropdownRef = useRef<HTMLDivElement>(null);
 	
 	useOutsideClick(dropdownRef, () => setDropdownOpen(false));
 
 	useEffect(() => {
-		if (isDropdownOpen) {
-			document.body.style.overflow = 'hidden';
-		} else {
-			document.body.style.overflow = 'auto';
-		}
-
-		return () => {
-			document.body.style.overflow = 'auto';
-		};
+		document.body.style.overflow = isDropdownOpen ? 'hidden' : 'auto';
 	}, [isDropdownOpen]);
 
 	const handleDropdownToggle = () => {
-		setDropdownOpen(!isDropdownOpen);
+		setDropdownOpen(prev => !prev);
 	};
 
 	const handleYearSelect = (selectedYear: number) => {
