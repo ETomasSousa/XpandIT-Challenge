@@ -1,44 +1,44 @@
 .movies-list {
-  height: 55vh;
+	height: 55vh;
 }
 
 .movies-list thead th {
-    border-bottom: 1px solid #0B749B;
-    padding: 4px 0;
-    text-align: left;
-    color: #0B749B;
-    font-size: 10px;
-    font-weight: bold;
+	border-bottom: 1px solid #0B749B;
+	padding: 4px 0;
+	text-align: left;
+	color: #0B749B;
+	font-size: 10px;
+	font-weight: bold;
 }
 
 .movies-list tbody {
-  overflow: auto;
-
+	overflow: auto;
+	
 }
 
 table {
-  border-collapse: collapse;
-  width: 100%;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 
 .movies-list thead th:nth-child(1) {
-  width: 9%;
-  text-align: center;
+	width: 9%;
+	text-align: center;
 }
 
 .movies-list thead th:nth-child(2) {
-  width: 47%;
+	width: 47%;
 }
 
 .movies-list thead th:nth-child(3) {
-  width: 16%;
+	width: 16%;
 }
 
 .movies-list thead th:nth-child(4) {
-  width: 20%;
+	width: 20%;
 }
 
 .movies-list thead th:nth-child(5) {
-  width: 10%;
+	width: 10%;
 }
