@@ -1,8 +1,8 @@
 export interface Movie {
-	id:	string,
-	title:	string,
+	id: string,
+	title: string,
 	year: number,
-	rank:	number,
+	rank: number,
 	revenue: number,
 }
 
@@ -17,8 +17,8 @@ export interface MovieDetail extends Movie {
 	director: string,
 	actors: string,
 	runtime: number,
-	rating:	number,
-	votes:	number,
+	rating: number,
+	votes: number,
 	metascore: number,
 }
 

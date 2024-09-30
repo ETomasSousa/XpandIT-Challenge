@@ -2,11 +2,12 @@
 	display: flex;
 	align-items: center;
 	margin-bottom: 42px;
-	width:fit-content;
+	width: fit-content;
 	position: relative;
 }
 
-.filter, .filter-active {
+.filter,
+.filter-active {
 	position: relative;
 	margin-right: 16px;
 	padding: 8px 12px;
@@ -20,7 +21,7 @@
 	transition: opacity 0.3s ease-in;
 }
 
-.filter-active{
+.filter-active {
 	background-color: #00BAFF;
 	color: #012433;
 	font-weight: 400;
@@ -57,7 +58,7 @@
 	color: #78849EB9;
 	font-size: 12px;
 	margin: 12px 0;
-	
+
 }
 
 .filter-dropdown-option {
@@ -81,5 +82,5 @@
 }
 
 .reset-logo:hover {
-	opacity: 0.7;   
+	opacity: 0.7;
 }

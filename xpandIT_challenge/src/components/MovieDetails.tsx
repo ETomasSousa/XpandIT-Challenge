@@ -2,9 +2,9 @@
 import { MovieDetailsProps } from '../types/Movie';
 import close from '../assets/close.svg'
 import popupLine from '../assets/popup-line.svg';
-import './../styles/MovieDetails.css';
+import './../styles/MovieDetails.module.css';
 
-const MovieDetails: React.FC<MovieDetailsProps> = ({ movieDetails, onClose }) => {
+const MovieDetails = ({ movieDetails, onClose }: MovieDetailsProps) => {
 
 	if (!movieDetails) return null;
 

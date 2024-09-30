@@ -30,13 +30,17 @@ header {
 	align-items: center;
 	justify-content: center;
 	height: 30px;
-	color:#386071;
+	color: #386071;
 	font-size: 30px;
 	animation: loading-animation 1s linear infinite alternate;
 }
 
 .loading:before {
-	content:"Loading..."
+	content: "Loading..."
 }
 
-@keyframes loading-animation {to{opacity: 0}}
+@keyframes loading-animation {
+	to {
+		opacity: 0
+	}
+}
